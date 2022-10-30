@@ -25,6 +25,7 @@
         android:required="true" />
     <uses-feature android:name="android.hardware.audio.low_latency" />
     <uses-feature android:name="android.hardware.audio.pro" />
+    <uses-feature android:name="android.software.input_methods" />
 
 
     <application

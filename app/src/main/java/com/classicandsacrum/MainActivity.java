@@ -25,7 +25,13 @@ public class MainActivity extends AppCompatActivity {
         myWebSettings = myWebView.getSettings();
         myWebSettings.setJavaScriptEnabled(true);
         myWebSettings.setDomStorageEnabled(true);
+        myWebSettings.getJavaScriptCanOpenWindowsAutomatically();
+        myWebSettings.setLoadWithOverviewMode(true);
+        myWebSettings.setSupportMultipleWindows(true);
+        myWebSettings.getAllowContentAccess();
+        myWebSettings.setAllowUniversalAccessFromFileURLs(true);
         myWebView.loadUrl("https://classicandsacrum.com/");
+
         myWebView.setWebViewClient(new WebViewClient());
     }
 
