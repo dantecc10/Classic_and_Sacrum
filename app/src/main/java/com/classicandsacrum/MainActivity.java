@@ -8,6 +8,7 @@ package com.classicandsacrum;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,17 +23,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myWebView = findViewById(R.id.classic);
+        myWebView.loadUrl("https://classicandsacrum.com/");
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.setWebChromeClient(new WebChromeClient());
+
         myWebSettings = myWebView.getSettings();
+
         myWebSettings.setJavaScriptEnabled(true);
         myWebSettings.setDomStorageEnabled(true);
+        //myWebSettings.getAllowFileAccess(true);
+
+
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.getSettings().setDomStorageEnabled(true);
+        myWebView.getSettings().setAllowFileAccess(true);
+        myWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        myWebView.clearCache(false);
+
         myWebSettings.getJavaScriptCanOpenWindowsAutomatically();
         myWebSettings.setLoadWithOverviewMode(true);
         myWebSettings.setSupportMultipleWindows(true);
         myWebSettings.getAllowContentAccess();
         myWebSettings.setAllowUniversalAccessFromFileURLs(true);
-        myWebView.loadUrl("https://classicandsacrum.com/");
 
-        myWebView.setWebViewClient(new WebViewClient());
+
     }
 
     @Override
